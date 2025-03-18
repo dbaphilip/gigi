@@ -25,8 +25,24 @@
     transform: rotate(-3deg);
 }
 
+.avatar {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    margin: 0;
+    padding: 0;
+}
+
 input {
     border: unset;
     width: 100%;
     padding: .5rem;
+}
+
+a {
+    text-decoration: none !important;
 }

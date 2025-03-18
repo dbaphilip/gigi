@@ -13,6 +13,26 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    
+    colors = [
+      "#e74c3c", 
+      "#c0392b", 
+      "#8e44ad", 
+      "#2c3e50", 
+      "#34495e", 
+      "#f39c12", 
+      "#d35400", 
+      "#e67e22",
+      "#16a085",
+      "#27ae60",
+      "#2980b9",
+      "#273c75",
+      "#192a56"
+    ]
+    idx = rand(0..(colors.size - 1))
+    color = colors[idx]
+
+    @user.color = color
     if @user.save
       sign_in(@user.id)
       redirect_to @user
