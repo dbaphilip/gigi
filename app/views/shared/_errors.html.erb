@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+  <div class="offset-1 col-5">
+    <aside class="shadow-secondary p-3">
+      <ul class="brico fs-3 text-danger">
+        <% object.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </aside>
+  </div>
+<% end %>

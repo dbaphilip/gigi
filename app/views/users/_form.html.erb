@@ -1,0 +1,31 @@
+<div class="col-6">
+  <%= form_with(model: user) do |f| %>
+    <table class="table fs-3 brico shadow-tetiary">
+      <tbody>
+        <tr>
+          <td>
+            <%= f.text_field :username, placeholder: "Pick a username" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.text_field :phone, placeholder: "Phone" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.password_field :password, placeholder: "Password" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.password_field :password_confirmation, placeholder: "Password" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= f.submit "Sign up", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+  <% end %>
+</div>
+<%# Aside|Errors %>
+<%= render "shared/errors", object: user %>

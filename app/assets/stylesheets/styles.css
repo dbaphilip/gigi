@@ -1,0 +1,28 @@
+.brico {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.gochi {
+    font-family: "Gochi Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.shadow-primary {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.shadow-secondary {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.shadow-tetiary {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+input {
+    border: unset;
+    width: 100%;
+    padding: .5rem;
+}
