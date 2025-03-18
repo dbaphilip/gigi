@@ -37,6 +37,10 @@
     padding: 0;
 }
 
+.avatar:hover {
+    background-color: #000 !important;
+}
+
 input {
     border: unset;
     width: 100%;

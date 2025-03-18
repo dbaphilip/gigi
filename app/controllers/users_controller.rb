@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :delete, :destroy]
+  before_action :require_sign_in, only: [:edit, :update, :delete, :destroy]
+  before_action :require_correct_user, only: [:edit, :update, :delete, :destroy]
+
   def index
+    @title = "Users"
     @users = User.order("created_at desc")
   end
 
   def show
+    @user = User.find_by!(slug: params[:id])
+    @title = @user.name
   end
 
   def new
@@ -64,8 +69,9 @@ class UsersController < ApplicationController
 
   private
 
-    def set_user
-      @user = User.find(params[:id])
+    def require_correct_user
+      @user = User.find_by!(slug: params[:id])
+      redirect_to root_url unless correct_user?(@user)
     end
 
     def user_params

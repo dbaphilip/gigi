@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       sign_in(user.id)
-      redirect_to user
+      redirect_to (session[:intended_url] || user)
+      session[:intended_url] = nil
     else
       flash.now[:alert] = "Invalid phone/password"
       render :new, status: :unprocessable_entity

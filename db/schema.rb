@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_220110) do
     t.string "name"
     t.string "phone"
     t.string "color"
+    t.string "slug"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
