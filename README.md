@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App Specs:
 
-Things you may want to cover:
+* ruby 3.4.2
 
-* Ruby version
+* rails 7.1.5.1
 
-* System dependencies
+* ubuntu 24.04 (Noble Numbat)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* SQLite3
