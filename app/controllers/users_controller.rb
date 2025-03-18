@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      sign_in(@user.id)
       redirect_to @user
     else
       render :new, status: :unprocessable_entity
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
+      sign_out
       redirect_to root_url
     end
   end

@@ -1,0 +1,30 @@
+<div class="row">
+  <h1 class="brico fw-bold mb-5">Sign in</h1>
+  <div class="col-6">
+    <%= form_with(url: session_path) do |f| %>
+      <table class="table fs-3 brico shadow-tetiary">
+        <tbody>
+          <tr>
+            <td>
+              <%= f.text_field :phone, placeholder: "08034148821" %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.password_field :password, placeholder: "Password" %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <%= f.submit "Sign in", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+    <% end %>
+  </div>
+  <%# Aside %>
+  <% if flash[:alert] %>
+    <div class="offset-1 col-5">
+      <aside class="shadow-secondary brico text-danger fs-3">
+        <p class="p-3"> <%= flash[:alert] %> </p>
+      </aside>
+    </div>
+  <% end %>
+</div>
