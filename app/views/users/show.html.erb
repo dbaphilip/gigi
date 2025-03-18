@@ -7,11 +7,10 @@
       <table class="table">
         <thead class="text-center">
           <tr>
-            <th scope="col">
-              <%= @user.username %> (<%= @user.phone %>)
-            </th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col"> <%= @user.name %> </th>
+          </tr>
+          <tr>
+            <th scope="col" class="text-muted"> <%= @user.phone %> </th>
           </tr>
         </thead>
         <tbody class="text-center">
@@ -22,7 +21,7 @@
           </tr>
           <tr>
             <td colspan="2">
-              <%= link_to "Delete my account", edit_user_path(@user), class: "shadow-tetiary btn btn-danger btn-lg" %>
+              <%= link_to "Delete my account", delete_user_path(@user), class: "shadow-tetiary btn btn-danger btn-lg" %>
             </td>
           </tr>
         </tbody>

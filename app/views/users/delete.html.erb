@@ -1,0 +1,32 @@
+<div class="row brico fs-4">
+  <!--
+  <div class="col-8">
+    <h1 class="fw-bold mb-3"> User feed </h1>
+  </div>
+  -->
+  <div class="offset-3 col-6">
+    <aside class="shadow-secondary">
+      <table class="skew table">
+        <thead class="text-center">
+          <tr>
+            <th scope="col" class="text-muted"> <%= @user.name %> </th>
+            <th scope="col" class="text-muted"> <%= @user.phone %> </th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td colspan="2" class="fs-3 p-5"> Are you sure you want to delete this account?</td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "Cancel", request.referrer, class: "shadow-tetiary btn btn-primary btn-lg" %>
+            </td>
+            <td>
+              <%= link_to "Delete", @user, data: {"turbo-method": :delete}, class: "shadow-tetiary btn btn-danger btn-lg" %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </aside>
+  </div>
+</div>

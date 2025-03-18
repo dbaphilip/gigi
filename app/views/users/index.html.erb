@@ -6,19 +6,19 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Username</th>
+            <th scope="col">Name</th>
             <th scope="col">Phone</th>
             <th scope="col"></th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
-          <% num = 0 %>
+          <% num = @users.size + 1 %>
           <% @users.each do |u| %>
-            <% num = num + 1 %>
+            <% num = num - 1 %>
             <tr>
               <th scope="row"> <%= num %> </th>
-              <td> <%= link_to u.username, u %> </td>
+              <td> <%= link_to u.name, u %> </td>
               <td> <%= u.phone %> </td>
             </tr>
           <% end %>

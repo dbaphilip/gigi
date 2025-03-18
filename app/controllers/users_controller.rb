@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :delete, :destroy]
   def index
-    @users = User.order(:username)
+    @users = User.order("created_at desc")
   end
 
   def show
@@ -35,6 +35,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    if @user.destroy
+      redirect_to root_url
+    end
   end
 
   private
@@ -44,6 +47,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :phone, :password, :password_confirmation)
+      params.require(:user).permit(:name, :phone, :password, :password_confirmation)
     end
 end

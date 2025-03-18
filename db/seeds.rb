@@ -1,36 +1,36 @@
 User.create!([
   {
-    username: 'bravo',
+    name: 'Johnny Bravo',
     phone: '111-111-111',
     password: "demons"
   },
   {
-    username: 'charlie',
+    name: 'James Charlie',
     phone: '222-222-222',
     password: "demons"
   },
   {
-    username: 'juliet',
+    name: 'Juliet Capulet',
     phone: '333-333-333',
     password: "demons"
   },
   {
-    username: 'mike',
+    name: 'Mike Morano',
     phone: '444-444-444',
     password: "demons"
   },
   {
-    username: 'oscar',
+    name: 'Oscar Joshua',
     phone: '555-555-555',
     password: "demons"
   },
   {
-    username: 'papa',
+    name: 'Papa Shango',
     phone: '666-666-666',
     password: "demons"
   },
   {
-    username: 'romeo',
+    name: 'Romeo Montague',
     phone: '777-777-777',
     password: "demons"
   },
