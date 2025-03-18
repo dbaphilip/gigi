@@ -24,7 +24,11 @@
         </tr>
       </tbody>
     </table>
-    <%= f.submit "Sign up", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+    <% if user.new_record? %>
+      <%= f.submit "Sign up", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+    <% else %>
+      <%= f.submit "Update my account", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+    <% end %>
   <% end %>
 </div>
 <%# Aside|Errors %>
