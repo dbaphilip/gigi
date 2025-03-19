@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by!(slug: params[:id])
     @title = @user.name
+    @products = @user.products.order("created_at desc")
   end
 
   def new
