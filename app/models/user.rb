@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :products
+
   validates :phone,
               length: { minimum: 11, maximum: 11},
               uniqueness: { case_sensitive: true }

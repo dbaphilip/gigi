@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
 
   resource :session, only: [:new, :create, :destroy]
+
+  resources :products
   
   get "sign_up" => "users#new"
   get "sign_in" => "sessions#new"

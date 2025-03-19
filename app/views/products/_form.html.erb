@@ -1,0 +1,30 @@
+<div class="col-6">
+  <%= form_with(model: product) do |f| %>
+    <table class="table fs-3 brico shadow-tetiary">
+      <tbody>
+        <tr>
+          <td>
+            <%= f.text_field :title, placeholder: "Highlander Upgrade, 2015 to 2024" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.number_field :price, placeholder: "2500000" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.text_area :description, rows: 5, placeholder: "Complete upgrade kits front and back highlander 2014-2015 upgraded to 2024 VIP face available now." %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <% if product.new_record? %>
+      <%= f.submit "Create product", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+    <% else %>
+      <%= f.submit "Update product", class: "fs-3 brico shadow-tetiary btn btn-primary btn-lg" %>
+    <% end %>
+  <% end %>
+</div>
+<%# Aside|Errors %>
+<%= render "shared/errors", object: product %>

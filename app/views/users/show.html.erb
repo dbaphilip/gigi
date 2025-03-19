@@ -1,8 +1,20 @@
 <div class="row brico fs-4">
-  <div class="col-8">
-    <h1 class="fw-bold mb-3"> User feed </h1>
+  <div class="col-7">
+    <% @user.products.each do |p| %>
+      <article>
+        <header class="fs-1 fw-bold mt-3"> <%= p.title %> </header>
+        <main>
+          <%= link_to p do %>
+            <div class="text-center shadow-secondary">
+              <%= image_tag "highlander.webp" %>
+            </div>
+          <% end %>
+          <p class="fs-2 mt-4"> <%= p.description %> </p>
+        </main>
+      </article>
+    <% end %>
   </div>
-  <div class="col-4">
+  <div class="col-5">
     <aside class="shadow-secondary">
       <table class="table">
         <thead class="text-center">
@@ -22,12 +34,22 @@
             </tr>
             <tr>
               <td colspan="2">
-                <%= link_to "Delete my account", delete_user_path(@user), class: "shadow-tetiary btn btn-danger btn-lg" %>
+                <%= link_to "Delete my account", delete_user_path(@user), class: "shadow-tetiary btn btn-danger" %>
               </td>
             </tr>
           </tbody>
         <% end %>
       </table>
     </aside>
+    <% if signed_in? %>
+      <hr / class="my-5">
+      <aside>
+        <div class="d-grid gap-2 mt-5">
+          <%= link_to(new_product_path, class: "btn btn-success btn-lg shadow-tetiary fs-3") do %>
+            Sell a product
+          <% end %>
+        </div>
+      </aside>
+    <% end %>
   </div>
 </div>

@@ -1,0 +1,57 @@
+<div class="row brico fs-4">
+  <div class="col-7">
+    <h1 class="fw-bold mb-4"> <%= @product.title %> </h1>
+    <div class="product-image-container">
+      <div class="shadow-secondary text-center">
+        <%= image_tag "mercedez.webp" %>
+      </div>
+    </div>
+  </div>
+  <%#  %>
+  <%# Aside %>
+  <div class="col-5">
+    <aside class="mt-5 shadow-tetiary">
+      <p class="p-3 fs-2"> <%= @product.description %> </p>
+    </aside>
+    <%#  %>
+    <aside class="mt-4 shadow-secondary">
+      <table class="table">
+        <thead class="text-center">
+          <tr>
+            <th scope="col"> <%= number_to_currency @product.price, precision: 0 %> </th>
+          </tr>
+          <tr>
+            <th scope="col" class="text-muted">
+              <%= link_to @product.user.name, @product.user %>
+              (<%= @product.user.phone %>)
+            </th>
+          </tr>
+        </thead>
+        <%# if correct_user?(@user) %>
+        <tbody class="text-center">
+          <tr>
+            <td colspan="2">
+              <%= link_to "Edit this product", edit_product_path(@product), class: "shadow-tetiary btn btn-primary btn-lg" %>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <%= link_to "Delete this product", @product, class: "shadow-tetiary btn btn-danger" %>
+            </td>
+          </tr>
+        </tbody>
+        <%# end %>
+      </table>
+    </aside>
+    <% if signed_in? %>
+      <hr / class="my-5">
+      <aside>
+        <div class="d-grid gap-2 mt-5">
+          <%= link_to(new_product_path, class: "btn btn-success btn-lg shadow-tetiary fs-3") do %>
+            Sell a product
+          <% end %>
+        </div>
+      </aside>
+    <% end %>
+  </div>
+</div>
