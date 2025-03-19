@@ -2,14 +2,14 @@
   <div class="col-7">
     <% @products.each do |p| %>
       <article>
-        <header class="fs-1 fw-bold mt-3"> <%= p.title %> </header>
+        <header class="fs-1 fw-bold p-3"> <%= p.title %> </header>
         <main>
           <%= link_to p do %>
             <div class="text-center shadow-secondary">
-              <%= image_tag "highlander.webp" %>
+              <%= image_tag "mercedez.webp" %>
             </div>
           <% end %>
-          <p class="fs-2 mt-4"> <%= p.description %> </p>
+          <p class="fs-2 p-4"> <%= p.description %> </p>
         </main>
       </article>
     <% end %>
