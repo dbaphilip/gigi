@@ -6,7 +6,11 @@
         <main>
           <%= link_to p do %>
             <div class="text-center shadow-secondary">
-              <%= image_tag "mercedez.webp" %>
+              <% if p.image.attached? %>
+                <%= image_tag p.image %>
+              <% else %>
+                <%= image_tag "mercedez.webp" %>
+              <% end %>
             </div>
           <% end %>
           <p class="fs-2 p-4"> <%= p.description %> </p>
