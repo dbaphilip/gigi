@@ -94,6 +94,12 @@ Product.create!([
     price: 1450000,
     description: 'Brand new Qlink delivery service bike with high engine capacity.',
   },
+  {
+    title: "Laptop HP EliteBook 850 G3 (8GB Intel Core I5 HDD+SSD 256GB)",
+    user_id: 1,
+    price: 230000,
+    description: 'Slick HP Elitebook 850 G3. 8g RAM. 256g SSD. Core i5 6th Gen. Keyboard light. SIM slot. Type C. Excellent battery life. 15.6" screen.',
+  },
 ])
 
 # ========
@@ -103,6 +109,7 @@ Product.create!([
 [
   ["Mercedes-Benz GL-Class GL 450 2012 Gray", "mercedez.webp"],
   ["Highlander Upgrade, 2015 to 2024", "highlander.webp"],
+  ["Laptop HP EliteBook 850 GB 8GB Intel Core I5 HDD+SSD 256GB", "hp.webp"],
   ["Latest Upgrade Kits for Toyota Highlander 2020-2022 to 2025", "upgrade.webp"],
   ["Tundra 2008-2010-2015 Upgraded to 2024 Like Kits Available", "tundra.webp"],
   ["Fat Tyre Giant Bicycle", "bike.webp"],
