@@ -82,6 +82,18 @@ Product.create!([
     price: 320000,
     description: "26-inch fat tyre giant bicycle for adults.",
   },
+  {
+    title: 'Qlink Motorcycle',
+    user_id: 1,
+    price: 800000,
+    description: "Qlink 200cc bike is fuel-economic. Suitable for dispatch and delivery.",
+  },
+  {
+    title: "New Qlink XF 200 2013 (Blue)",
+    user_id: 1,
+    price: 1450000,
+    description: 'Brand new Qlink delivery service bike with high engine capacity.',
+  },
 ])
 
 # ========
@@ -93,7 +105,9 @@ Product.create!([
   ["Highlander Upgrade, 2015 to 2024", "highlander.webp"],
   ["Latest Upgrade Kits for Toyota Highlander 2020-2022 to 2025", "upgrade.webp"],
   ["Tundra 2008-2010-2015 Upgraded to 2024 Like Kits Available", "tundra.webp"],
-  ["Fat Tyre Giant Bicycle", "bike.webp"]
+  ["Fat Tyre Giant Bicycle", "bike.webp"],
+  ["Qlink Motorcycle", "qlink.webp"],
+  ["New Qlink XF 200 2013 (Blue)", "qlinks.webp"],
 ].each do |product_title, file_name|
   f = File.open(Rails.root.join("app/assets/images/#{file_name}"))
   p = Product.find_by(title: product_title)
