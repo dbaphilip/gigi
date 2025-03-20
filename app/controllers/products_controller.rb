@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
   before_action :require_sign_in, only: [:new, :create, :edit, :update]
+  before_action :require_correct_user, only: [:edit, :update]
   before_action :set_product, only: [:show, :edit, :update]
 
   def show
+    @title = @product.title
   end
 
   def new
@@ -34,6 +36,12 @@ class ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:title, :price, :image, :description)
+    end
+
+    def require_correct_user
+      @product = Product.find(params[:id])
+      @user = @product.user
+      redirect_to root_url unless correct_user?(@user)
     end
 
     def set_product

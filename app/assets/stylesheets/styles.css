@@ -72,11 +72,11 @@ a {
     text-decoration: none !important;
 }
 
-article {
+article main {
     box-shadow: 3px 1px 0 2px #333, 0 -1px 0 2px #333;
     /* padding: 1rem 2rem 1rem 2rem; */
 }
 
 article+article {
-    margin-top: 4rem;
+    margin-top: 7rem;
 }

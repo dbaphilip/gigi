@@ -1,7 +1,7 @@
 <div class="row brico fs-4">
   <div class="col-7">
     <h1 class="fw-bold mb-4"> <%= @product.title %> </h1>
-    <div class="product-image-container shadow-secondary text-center">
+    <div class="product-image-container text-center">
       <% if @product.image.attached? %>
         <%= image_tag @product.image %>
       <% else %>
@@ -29,20 +29,20 @@
             </th>
           </tr>
         </thead>
-        <%# if correct_user?(@user) %>
-        <tbody class="text-center">
-          <tr>
-            <td colspan="2">
-              <%= link_to "Edit this product", edit_product_path(@product), class: "shadow-tetiary btn btn-primary btn-lg" %>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <%= link_to "Delete this product", @product, class: "shadow-tetiary btn btn-danger" %>
-            </td>
-          </tr>
-        </tbody>
-        <%# end %>
+        <% if correct_user?(@product.user) %>
+          <tbody class="text-center">
+            <tr>
+              <td colspan="2">
+                <%= link_to "Edit this product", edit_product_path(@product), class: "shadow-tetiary btn btn-primary btn-lg" %>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <%= link_to "Delete this product", @product, class: "shadow-tetiary btn btn-danger" %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
       </table>
     </aside>
     <% if signed_in? %>

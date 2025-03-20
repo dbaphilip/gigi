@@ -2,10 +2,10 @@
   <div class="col-7">
     <% @products.each do |p| %>
       <article>
-        <header class="fs-1 fw-bold p-3"> <%= p.title %> </header>
+        <h1 class="fw-bold mb-4"> <%= p.title %> </h1>
         <main>
           <%= link_to p do %>
-            <div class="text-center shadow-secondary">
+            <div class="text-center">
               <% if p.image.attached? %>
                 <%= image_tag p.image %>
               <% else %>
@@ -13,7 +13,6 @@
               <% end %>
             </div>
           <% end %>
-          <p class="fs-2 p-4"> <%= p.description %> </p>
         </main>
       </article>
     <% end %>

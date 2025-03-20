@@ -76,4 +76,26 @@ Product.create!([
     price: 6000000,
     description: "Latest design upgrade kits Toyota highlander 2020 to 2025 newest design, landcruiser 2025 face for highlander available now.",
   },
+  {
+    title: 'Fat Tyre Giant Bicycle',
+    user_id: 1,
+    price: 320000,
+    description: "26-inch fat tyre giant bicycle for adults.",
+  },
 ])
+
+# ========
+# Product Images
+# =======
+
+[
+  ["Mercedes-Benz GL-Class GL 450 2012 Gray", "mercedez.webp"],
+  ["Highlander Upgrade, 2015 to 2024", "highlander.webp"],
+  ["Latest Upgrade Kits for Toyota Highlander 2020-2022 to 2025", "upgrade.webp"],
+  ["Tundra 2008-2010-2015 Upgraded to 2024 Like Kits Available", "tundra.webp"],
+  ["Fat Tyre Giant Bicycle", "bike.webp"]
+].each do |product_title, file_name|
+  f = File.open(Rails.root.join("app/assets/images/#{file_name}"))
+  p = Product.find_by(title: product_title)
+  p.image.attach(io: f, filename: file_name)
+end
