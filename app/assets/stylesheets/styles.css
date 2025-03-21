@@ -41,7 +41,7 @@
     background-color: #000 !important;
 }
 
-.product-image-container {
+.shadow-border {
     box-shadow: 3px 1px 0 2px #333, 0 -1px 0 2px #333;
 }
 
@@ -70,11 +70,6 @@ input::file-selector-button {
 
 a {
     text-decoration: none !important;
-}
-
-article main {
-    box-shadow: 3px 1px 0 2px #333, 0 -1px 0 2px #333;
-    /* padding: 1rem 2rem 1rem 2rem; */
 }
 
 article+article {

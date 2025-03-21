@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :phone,
               length: { minimum: 11, maximum: 11},
               uniqueness: { case_sensitive: true }
-  validates :name, presence: true
+  validates :name, :location, presence: true
 
   def to_param
     slug

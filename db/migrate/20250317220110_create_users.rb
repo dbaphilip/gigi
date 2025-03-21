@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :phone
       t.string :color
       t.string :slug
+      t.string :location
       t.string :password_digest
 
       t.timestamps

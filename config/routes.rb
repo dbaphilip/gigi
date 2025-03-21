@@ -9,10 +9,15 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :products
+  resources :products do
+    member do
+      get :delete
+    end
+  end
   
   get "sign_up" => "users#new"
   get "sign_in" => "sessions#new"
+  get "about" => "pages#about"
   
   root "users#index"
 end

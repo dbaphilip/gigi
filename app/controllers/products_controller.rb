@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :require_sign_in, only: [:new, :create, :edit, :update]
-  before_action :require_correct_user, only: [:edit, :update]
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :require_sign_in, only: [:new, :create, :edit, :update, :delete, :destroy]
+  before_action :require_correct_user, only: [:edit, :update, :delete, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :delete, :destroy]
 
   def show
     @title = @product.title
@@ -32,10 +32,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def delete
+  end
+
+  def destroy
+    if @product.destroy
+      redirect_to current_user, notice: "Product deleted"
+    end
+  end
+
   private
 
     def product_params
-      params.require(:product).permit(:title, :price, :image, :description)
+      params.require(:product).permit(:title, :location, :price, :image, :description)
     end
 
     def require_correct_user
