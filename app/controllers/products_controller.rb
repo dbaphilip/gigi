@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @title = "Update product info"
   end
 
   def update
