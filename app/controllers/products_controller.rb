@@ -48,12 +48,12 @@ class ProductsController < ApplicationController
     end
 
     def require_correct_user
-      @product = Product.find(params[:id])
+      @product = Product.find_by!(slug: params[:id])
       @user = @product.user
       redirect_to root_url unless correct_user?(@user)
     end
 
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find_by!(slug: params[:id])
     end
 end

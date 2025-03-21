@@ -142,5 +142,5 @@ Product.create!([
   f = File.open(Rails.root.join("app/assets/images/#{file_name}"))
   p = Product.find_by(title: product_title)
   p.image.attach(io: f, filename: file_name)
-  sleep(3.seconds)
+  sleep(5.seconds)
 end

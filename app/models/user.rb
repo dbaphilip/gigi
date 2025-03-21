@@ -17,7 +17,6 @@ class User < ApplicationRecord
   private
 
     def set_slug
-      # self.slug = "#{name.parameterize}-#{Time.now.getutc.to_s.parameterize}"
       self.slug = "#{name.parameterize}-#{phone.parameterize}"
     end
 
