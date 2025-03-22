@@ -7,7 +7,7 @@ class Product < ApplicationRecord
 
   validates :title, length: { minimum: 5 }
   validates :price, numericality: { greater_than: 100 }
-  validates :description, length: { minimum: 30 }
+  validates :description, length: { minimum: 15 }
   validates :location, presence: true
   # validates :image, presence: true
 

@@ -3,22 +3,22 @@
     <span class="fs-1">Gigi</span>
   </a>
   <ul class="fs-5 nav nav-pills">
+    <li class="nav-item">
+      <%= link_to "Sell", new_product_path, class: "nav-link active shadow-tetiary me-3 px-5"  %>
+    </li>
     <% if signed_in? %>
       <li class="nav-item">
-        <%= link_to current_user.name, current_user, class: "nav-link"  %>
+        <%= link_to current_user.name, current_user, class: "nav-link shadow-tetiary me-3"  %>
       </li>
       <li class="nav-item">
         <%= link_to "Sign out", session_path, data: { turbo_method: :delete }, class: "nav-link shadow-tetiary text-danger"  %>
       </li>
     <% else %>
       <li class="nav-item">
-        <%= link_to "Sell", new_product_path, class: "nav-link active shadow-tetiary me-3 px-5"  %>
+        <%= link_to "Sign up", sign_up_path, class: "nav-link shadow-tetiary me-3"  %>
       </li>
       <li class="nav-item">
-        <%= link_to "Sign up", sign_up_path, class: "nav-link"  %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign in", sign_in_path, class: "nav-link"  %>
+        <%= link_to "Sign in", sign_in_path, class: "nav-link shadow-tetiary text-success"  %>
       </li>
     <% end %>
   </ul>

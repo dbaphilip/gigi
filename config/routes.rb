@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   get "sign_in" => "sessions#new"
   get "about" => "pages#about"
   
-  root "users#index"
+  root "products#index"
 end

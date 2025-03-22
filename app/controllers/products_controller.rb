@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
   before_action :require_correct_user, only: [:edit, :update, :delete, :destroy]
   before_action :set_product, only: [:show, :edit, :update, :delete, :destroy]
 
+  def index
+    @title = "Buy anything. Sell anything."
+    @products = Product.order("created_at desc")
+  end
+
   def show
     @title = @product.title
   end

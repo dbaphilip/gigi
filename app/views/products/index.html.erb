@@ -1,0 +1,24 @@
+<div class="row brico fs-4">
+  <div class="offset-3 col-6">
+    <% @products.each do |p| %>
+      <article>
+        <h1 class="fw-bold mb-4"> <%= p.title %> </h1>
+        <div class="d-flex align-items-baseline avatar-time">
+          <p style="background-color: <%= p.user.color %>"  class="gochi avatar"> <%= p.user.name[0] %> </p>
+          <p class="ps-3"> <%= time_ago_in_words p.updated_at %> ago </p>
+        </div>
+        <main class="shadow-border">
+          <%= link_to p do %>
+            <div class="text-center">
+              <% if p.image.attached? %>
+                <%= image_tag p.image %>
+              <% else %>
+                <%= image_tag "gigi.svg" %>
+              <% end %>
+            </div>
+          <% end %>
+        </main>
+      </article>
+    <% end %>
+  </div>
+</div>
