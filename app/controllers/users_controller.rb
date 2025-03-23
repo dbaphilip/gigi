@@ -10,7 +10,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by!(slug: params[:id])
     @title = @user.name
-    @products = @user.products.order("created_at desc")
+    
+    if correct_user?(@user) 
+      @products = @user.products.order("created_at desc")
+    elsif @user.products.size == 1
+      redirect_to product_path(@user.products.first)
+    else
+      @products = @user.products.order("created_at desc")
+    end
   end
 
   def new
