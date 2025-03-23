@@ -3,11 +3,13 @@
     <%# Search %>
     <div class="mb-5 row">
       <div class="col-12">
-        <%= form_tag products_path, :method => 'get' do %>
+        <%= form_with(url: search_path) do |f| %>
           <table class="table fs-3 brico shadow-secondary">
             <tbody>
               <tr>
-                <td> <%= text_field_tag :search, params[:search], placeholder: "Search" %> </td>
+                <td>
+                  <%= f.text_field :search, placeholder: "Search" %>
+                </td>
               </tr>
             </tbody>
           </table>

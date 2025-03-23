@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "sign_up" => "users#new"
   get "sign_in" => "sessions#new"
   get "about" => "pages#about"
+  post "search" => "products#search"
   
   root "products#index"
 end

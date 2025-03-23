@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
 
   def index
     @title = "Buy anything. Sell anything."
-    @products = Product.order("created_at desc")
+    @products = Product.search(params[:search]).order("created_at desc")
+    # @products = Product.order("created_at desc")
   end
 
   def show
