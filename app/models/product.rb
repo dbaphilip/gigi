@@ -19,7 +19,7 @@ class Product < ApplicationRecord
 
   def self.search(search)
     if search
-      where("title like ?", "%#{search}%").order("created_at desc")
+      where("title ilike ?", "%#{search}%").order("created_at desc")
       # where("starts_at > ?", Time.now).order("starts_at")
       # Person.where("administrator = 1").order("created_on DESC").find(1)
     else
