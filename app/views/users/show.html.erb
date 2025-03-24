@@ -1,29 +1,11 @@
 <div class="row brico fs-4">
-  <div class="col-7">
-    <% @products.each do |p| %>
-      <article>
-        <h1 class="fw-bold mb-4"> <%= p.title %> </h1>
-        <main class="shadow-border">
-          <%= link_to p do %>
-            <div class="text-center">
-              <% if p.image.attached? %>
-                <%= image_tag p.image %>
-              <% else %>
-                <%= image_tag "gigi.svg" %>
-              <% end %>
-            </div>
-          <% end %>
-        </main>
-      </article>
-    <% end %>
-  </div>
-  <div class="col-5">
+  <div class="col-lg-4">
     <% if flash[:notice] %>
       <aside class="mt-5 fw-bold fs-2 text-success p-4 shadow-border text-center">
         <span> <%= flash[:notice] %> </span>
       </aside>
     <% end %>
-    <aside class="mt-5 shadow-secondary">
+    <aside style="margin-bottom: 7rem;" class="mt-5 shadow-secondary">
       <table class="table">
         <thead class="text-center">
           <tr>
@@ -52,15 +34,35 @@
         <% end %>
       </table>
     </aside>
-    <% if signed_in? %>
+    <!--
+    <%# if signed_in? %>
       <hr / class="my-5">
       <aside>
         <div class="d-grid gap-2 mt-5">
-          <%= link_to(new_product_path, class: "btn btn-success btn-lg shadow-tetiary fs-3") do %>
+          <%#= link_to(new_product_path, class: "btn btn-success btn-lg shadow-tetiary fs-3") do %>
             Sell a product
-          <% end %>
+          <%# end %>
         </div>
       </aside>
+    <%# end %>
+    -->
+  </div>
+  <div class="col-lg-7">
+    <% @products.each do |p| %>
+      <article>
+        <h1 class="fw-bold mb-4"> <%= p.title %> </h1>
+        <main class="shadow-border">
+          <%= link_to p do %>
+            <div class="text-center">
+              <% if p.image.attached? %>
+                <%= image_tag p.image %>
+              <% else %>
+                <%= image_tag "gigi.svg" %>
+              <% end %>
+            </div>
+          <% end %>
+        </main>
+      </article>
     <% end %>
   </div>
 </div>
